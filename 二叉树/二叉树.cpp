@@ -43,7 +43,7 @@ void shown(struct bintree* proot, int n)
 	{
 		return;
 	}
-	else                                //ÖĞĞò±éÀú£¬Í¨¹ın¿ØÖÆ²ãÊı
+	else                                //ä¸­åºéå†ï¼Œé€šè¿‡næ§åˆ¶å±‚æ•°
 	{
 		shown(proot->pleft, n + 1);
 		for (int i = 0;i < n;i++)
@@ -57,7 +57,7 @@ void shown(struct bintree* proot, int n)
 
 
 
-void zhong(struct bintree*proot)//ÖĞĞò±éÀú(µİ¹é£©
+void zhong(struct bintree*proot)//ä¸­åºéå†(é€’å½’ï¼‰
 {
 	if (proot == nullptr)
 	{
@@ -80,7 +80,7 @@ void zhong(struct bintree*proot)//ÖĞĞò±éÀú(µİ¹é£©
 
 
 
-void zhongstack(struct bintree*proot)//ÖĞĞò·Çµİ¹é
+void zhongstack(struct bintree*proot)//ä¸­åºéé€’å½’
 {
 	if (proot == nullptr)
 	{
@@ -90,19 +90,19 @@ void zhongstack(struct bintree*proot)//ÖĞĞò·Çµİ¹é
 	{
 		struct bintree*pcurr = proot;
 		stack<bintree*>mystack;
-		while (!mystack.empty() || pcurr != nullptr)//ÖÕÖ¹Ìõ¼ş
+		while (!mystack.empty() || pcurr != nullptr)//ç»ˆæ­¢æ¡ä»¶
 		{
 			while (pcurr != nullptr)
 			{
 				mystack.push(pcurr);
-				pcurr = pcurr->pleft;//×ó½ÚµãÈ«²¿½øÕ»
+				pcurr = pcurr->pleft;//å·¦èŠ‚ç‚¹å…¨éƒ¨è¿›æ ˆ
 			}
 			if (!mystack.empty())
 			{
 				pcurr = mystack.top();
 				cout << " " << pcurr->Nodedata << endl;
 				mystack.pop();
-				pcurr = pcurr->pright;//³öÕ»
+				pcurr = pcurr->pright;//å‡ºæ ˆ
 			}
 
 		}
@@ -111,7 +111,7 @@ void zhongstack(struct bintree*proot)//ÖĞĞò·Çµİ¹é
 
 
 
-void xian(struct bintree*proot)//ÏÈĞò±éÀú(µİ¹é£©
+void xian(struct bintree*proot)//å…ˆåºéå†(é€’å½’ï¼‰
 {
 	if (proot == nullptr)
 	{
@@ -135,7 +135,7 @@ void xian(struct bintree*proot)//ÏÈĞò±éÀú(µİ¹é£©
 
 
 
-void xianstack(struct bintree*proot)//ÏÈĞò·Çµİ¹é
+void xianstack(struct bintree*proot)//å…ˆåºéé€’å½’
 {
 	if (proot == nullptr)
 	{
@@ -145,7 +145,7 @@ void xianstack(struct bintree*proot)//ÏÈĞò·Çµİ¹é
 	{
 		struct bintree*pcurr = proot;
 		stack<bintree*>mystack;
-		while (!mystack.empty() || pcurr != nullptr)//ÖÕÖ¹Ìõ¼ş
+		while (!mystack.empty() || pcurr != nullptr)//ç»ˆæ­¢æ¡ä»¶
 		{
 			while (pcurr != nullptr)
 			{
@@ -167,7 +167,7 @@ void xianstack(struct bintree*proot)//ÏÈĞò·Çµİ¹é
 
 
 
-void houstack(struct bintree *proot)//ºóĞò·Çµİ¹é
+void houstack(struct bintree *proot)//ååºéé€’å½’
 {
 	if (proot == nullptr)
 		return;
@@ -182,7 +182,7 @@ void houstack(struct bintree *proot)//ºóĞò·Çµİ¹é
 			{
 				nosame *ptr = new nosame;
 				ptr->issame = true;
-				ptr->pnode = pcurr;//½Úµã±ÜÃâÖØ¸´
+				ptr->pnode = pcurr;//èŠ‚ç‚¹é¿å…é‡å¤
 				mystack.push(ptr);
 				pcurr = pcurr->pleft;
 
@@ -210,7 +210,7 @@ void houstack(struct bintree *proot)//ºóĞò·Çµİ¹é
 
 
 
-int getheight(struct bintree *proot)//Çó¶ş²æÊ÷²ãÊı
+int getheight(struct bintree *proot)//æ±‚äºŒå‰æ ‘å±‚æ•°
 {
 	int height = 0;
 	int left = 0;
@@ -227,7 +227,7 @@ int getheight(struct bintree *proot)//Çó¶ş²æÊ÷²ãÊı
 
 
 
-int getall(struct bintree*proot)//ÇóÒ¶½áµãÊı
+int getall(struct bintree*proot)//æ±‚å¶ç»“ç‚¹æ•°
 {
 	if (proot == nullptr)
 		return 0;
@@ -249,7 +249,7 @@ int getall(struct bintree*proot)//ÇóÒ¶½áµãÊı
 
 
 
-void ceng(struct bintree*proot)//·Çµİ¹éÇó²ãÊı
+void ceng(struct bintree*proot)//éé€’å½’æ±‚å±‚æ•°
 {
 	if (proot == nullptr)
 	{
@@ -279,7 +279,7 @@ void ceng(struct bintree*proot)//·Çµİ¹éÇó²ãÊı
 
 
 
-int getakknode(bintree*proot)//Çó½ÚµãÊı
+int getakknode(bintree*proot)//æ±‚èŠ‚ç‚¹æ•°
 {
 	if (proot == nullptr)
 		return 0;
@@ -291,7 +291,7 @@ int getakknode(bintree*proot)//Çó½ÚµãÊı
 
 
 
-bool isall(struct bintree*proot)//ÅĞ¶Ïµ¥Ö§¶ş²æÊ÷
+bool isall(struct bintree*proot)//åˆ¤æ–­å•æ”¯äºŒå‰æ ‘
 {
 	if (proot == nullptr)
 	{
@@ -311,7 +311,7 @@ bool isall(struct bintree*proot)//ÅĞ¶Ïµ¥Ö§¶ş²æÊ÷
 
 
 
-bool iscompetebintree(bintree*proot)//ÅĞ¶Ï¶ş²æÊ÷ÊÇ·ñÎªÍêÈ«¶ş²æÊ÷
+bool iscompetebintree(bintree*proot)//åˆ¤æ–­äºŒå‰æ ‘æ˜¯å¦ä¸ºå®Œå…¨äºŒå‰æ ‘
 {
 	if (proot == nullptr)
 	{
@@ -364,21 +364,21 @@ bool iscompetebintree(bintree*proot)//ÅĞ¶Ï¶ş²æÊ÷ÊÇ·ñÎªÍêÈ«¶ş²æÊ÷
 
 
 
-bintree *rev(bintree *proot)//¶ş²æÊ÷µÄ¾µÏñ
+bintree *rev(bintree *proot)//äºŒå‰æ ‘çš„é•œåƒ
 {
 	if (proot == nullptr)
 	{
 		return nullptr;
 	}
 	bintree *leftp= rev(proot->pleft);
-	bintree *rightp = rev(proot->pright);//µİ¹é
+	bintree *rightp = rev(proot->pright);//é€’å½’
 	proot->pleft = rightp;
-	proot->pright = leftp;   //½»»»
+	proot->pright = leftp;   //äº¤æ¢
 	return proot;
 }
 
 
-int getlevel(bintree *proot, int k)//Çó¶ş²æÊ÷k²ã½Úµã¸öÊı
+int getlevel(bintree *proot, int k)//æ±‚äºŒå‰æ ‘kå±‚èŠ‚ç‚¹ä¸ªæ•°
 {
 	if (proot == nullptr || k < 1)
 	{
@@ -435,19 +435,19 @@ void main()
 	show(proot, 1);
 	
 	shown(proot, 1);
-	cout << "ÖĞĞòµİ¹é" << endl;
+	cout << "ä¸­åºé€’å½’" << endl;
 	zhong(proot);
-	cout << "ÖĞĞò·Çµİ¹é" << endl;
+	cout << "ä¸­åºéé€’å½’" << endl;
 	zhongstack(proot);
-	cout << "ÏÈĞòµİ¹é" << endl;
+	cout << "å…ˆåºé€’å½’" << endl;
 	xian(proot);
-	cout << "ÏÈĞò·Çµİ¹é" << endl;
+	cout << "å…ˆåºéé€’å½’" << endl;
 	xianstack(proot);
-	cout << "ºóĞò·Çµİ¹é" << endl;
+	cout << "ååºéé€’å½’" << endl;
 	houstack(proot);
-	cout << "Ò¶½áµãÊı" << getall(proot) << endl;
+	cout << "å¶ç»“ç‚¹æ•°" << getall(proot) << endl;
 	ceng(proot);
-	cout << "½ÚµãÊı" << getakknode(proot) << endl;
+	cout << "èŠ‚ç‚¹æ•°" << getakknode(proot) << endl;
 	cout << iscompetebintree(proot) << endl;
 	shown(rev(proot), 1);
 	
